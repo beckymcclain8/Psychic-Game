@@ -55,7 +55,7 @@
             var userGuess = event.key;
             console.log(userGuess);
             //make an if statement that says they should only click letters... no other keys
-            if () {
+
                 if (userGuess === computerGuess) {
 
                     wins++;
@@ -64,6 +64,7 @@
                         guessesLeft = 10;
                         computerGuess = letters[Math.floor(Math.random() * letters.length)];
                         console.log(computerGuess);
+                        guessesSoFar = [""]
                     }
 
                     resetGame();
@@ -73,6 +74,9 @@
                     losses++;
                     function resetGame() {
                         guessesLeft = 10;
+                        computerGuess = letters[Math.floor(Math.random() * letters.length)];
+                        console.log(computerGuess);
+                        guessesSoFar = [""]
                     }
 
                     resetGame();
@@ -97,7 +101,7 @@
                 document.querySelector("#game").innerHTML = html;
 
             }
-        }
+        
 
 
 
