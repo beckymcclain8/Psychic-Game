@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src= "assets/javascript/game.js"></script>
     <title>Psychic Game</title>
 </head>
 
@@ -32,88 +33,7 @@
             <p> Your Guesses So Far:</p>
         </div>
     </div>
-    <script>
 
-
-        // app records what letters have been guessed so far
-        // make sure game restarts after each win/loss w/o refreshing the game
-
-
-        //array of letters for the computer to choose from
-        var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-        var wins = 0;
-        var losses = 0;
-        var guessesLeft = 10;
-        var guessesSoFar = [""]
-
-        // computer chooses a random letter
-        var computerGuess = letters[Math.floor(Math.random() * letters.length)];
-        console.log(computerGuess);
-
-        // player guesses letters
-        document.onkeyup = function (event) {
-            var userGuess = event.key;
-            console.log(userGuess);
-            //make an if statement that says they should only click letters... no other keys
-
-                if (userGuess === computerGuess) {
-
-                    wins++;
-                    console.log("win!");
-                    function resetGame() {
-                        guessesLeft = 10;
-                        computerGuess = letters[Math.floor(Math.random() * letters.length)];
-                        console.log(computerGuess);
-                        guessesSoFar = [""]
-                    }
-
-                    resetGame();
-                }
-
-                else if (guessesLeft === 0) {
-                    losses++;
-                    function resetGame() {
-                        guessesLeft = 10;
-                        computerGuess = letters[Math.floor(Math.random() * letters.length)];
-                        console.log(computerGuess);
-                        guessesSoFar = [""]
-                    }
-
-                    resetGame();
-                }
-
-
-
-                //I added this and it underlined the "else" below
-                guessesSoFar.push(userGuess)
-
-                var html =
-                    "<h2>Guess What Letter I'm Thinking Of!</h2>" +
-
-                    "<p>Wins: " + wins + "</p>" +
-
-                    "<p>Losses: " + losses + "</p>" +
-                    // app records how many guesses are left
-                    "<p>Guesses Left: " + guessesLeft-- + "</p>" +
-                    //not sure
-                    "<p>Your Guesses So Far: " + guessesSoFar + "</p>";
-
-                document.querySelector("#game").innerHTML = html;
-
-            }
-        
-
-
-
-
-
-
-
-
-
-
-
-    </script>
 </body>
 
 </html>
