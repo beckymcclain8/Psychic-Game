@@ -3,7 +3,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
-var guessesSoFar = [""]
+var guessesSoFar = []
 
 // computer chooses a random letter
 var computerGuess = letters[Math.floor(Math.random() * letters.length)];
@@ -31,7 +31,7 @@ document.onkeyup = function (event) {
                 guessesLeft = 10;
                 computerGuess = letters[Math.floor(Math.random() * letters.length)];
                 console.log(computerGuess);
-                guessesSoFar = [""]
+                guessesSoFar = []
             }
 
             resetGame();
@@ -43,7 +43,7 @@ document.onkeyup = function (event) {
                 guessesLeft = 10;
                 computerGuess = letters[Math.floor(Math.random() * letters.length)];
                 console.log(computerGuess);
-                guessesSoFar = [""]
+                guessesSoFar = []
             }
 
             resetGame();
