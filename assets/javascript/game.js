@@ -16,7 +16,7 @@ document.onkeyup = function (event) {
 
 
     // app records what letters have been guessed so far
-    guessesSoFar.push(userGuess)
+    guessesSoFar.push(userGuess) 
 
 
 // Trying to make an if statement that says they should only click letters... no other keys
